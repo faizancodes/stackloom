@@ -1,3 +1,5 @@
+"use client";
+
 import { AlertList } from "@/components/alerts/alert-list";
 import { AlertRuleBuilder } from "@/components/alerts/alert-rule-builder";
 import { Card } from "@/components/ui/card";

@@ -113,6 +113,33 @@ export interface ComparisonState {
   selectedPackages: PackageIdentifier[];
 }
 
+export interface AlertRule {
+  id: string;
+  name: string;
+  packageName: string;
+  slug: string;
+  ecosystem: string;
+  metric: "commitInactivity" | "downloadDrop" | "unresolvedRatio" | "maintenanceScore";
+  threshold: number;
+  operator: "above" | "below";
+  enabled: boolean;
+  lastTriggeredAt?: string;
+}
+
+export interface AlertItem {
+  id: string;
+  packageName: string;
+  slug: string;
+  ecosystem: string;
+  title: string;
+  description: string;
+  metric: AlertRule["metric"];
+  severity: "success" | "warning" | "error" | "info";
+  value: string;
+  triggeredAt: string;
+  thresholdLabel: string;
+}
+
 export interface ApiErrorResponse {
   error: string;
 }

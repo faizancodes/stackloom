@@ -61,7 +61,6 @@ export default function SearchPage() {
               <EmptyState title="No packages found" description="Try broadening your filters or search terms." />
             )}
           </Card>
-          <ErrorState title="Live data unavailable" message="Search results will recover automatically when the API responds." />
         </div>
       </div>
     </div>

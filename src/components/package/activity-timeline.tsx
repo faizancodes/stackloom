@@ -24,12 +24,12 @@ export function ActivityTimeline({ downloads, releases, contributors, questions 
           <div key={item.key} className="space-y-2">
             <div className="flex items-center justify-between text-xs text-[#a1a1a1]">
               <span>{item.label}</span>
-              <span>{values[values.length - 1]}</span>
+              <span>{values[values.length - 1] ?? 0}</span>
             </div>
             <div className="flex h-16 items-end gap-2">
               {values.map((value, index) => (
-                <div key={index} className="flex-1 rounded-none bg-[#1a1a1a]">
-                  <div className={`rounded-none ${item.color}`} style={{ height: `${(value / max) * 100}%` }} />
+                <div key={index} className="flex-1 self-stretch rounded-none bg-[#1a1a1a]">
+                  <div className={`mt-auto rounded-none ${item.color}`} style={{ height: `${Math.max((value / max) * 100, 4)}%` }} />
                 </div>
               ))}
             </div>

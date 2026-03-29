@@ -26,10 +26,13 @@ export function DependencyGraph({ root, dependencies }: DependencyGraphProps) {
                 <div className="text-sm font-medium text-white">{dependency.name}</div>
                 <div className="mt-1 text-xs text-[#666666]">Depth {dependency.depth} · Centrality {dependency.centrality}%</div>
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 <Badge tone={dependency.maintained ? "success" : "warning"}>{dependency.maintained ? "Maintained" : "Lagging"}</Badge>
                 <Badge tone={dependency.risk > 70 ? "error" : dependency.risk > 40 ? "warning" : "info"}>Risk {dependency.risk}%</Badge>
               </div>
+            </div>
+            <div className="mt-4 h-2 rounded-none bg-[#1a1a1a]">
+              <div className="h-2 rounded-none bg-[var(--accent)]" style={{ width: `${dependency.centrality}%` }} />
             </div>
           </div>
         ))}

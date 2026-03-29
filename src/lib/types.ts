@@ -4,6 +4,22 @@ export interface PackageIdentifier {
   ecosystem: string;
 }
 
+export interface PackageResolution {
+  query: string;
+  packageName: string;
+  ecosystem: string;
+  repositoryOwner?: string;
+  repositoryName?: string;
+  repositoryUrl?: string;
+  npmName?: string;
+  stackExchangeTag?: string;
+}
+
+export interface ApiRouteContext {
+  params?: Record<string, string | string[] | undefined>;
+  searchParams?: URLSearchParams;
+}
+
 export interface GitHubRepository {
   owner: string;
   name: string;
@@ -107,18 +123,22 @@ export interface ApiSuccessResponse<T> {
 
 export interface GithubRepoApiResponse {
   repository: GitHubRepository;
+  source: "github";
 }
 
 export interface GithubActivityApiResponse {
   activity: GitHubActivityPoint[];
+  source: "github";
 }
 
 export interface NpmPackageApiResponse {
   package: NpmPackageMetadata;
+  source: "npm";
 }
 
 export interface NpmTrendsApiResponse {
   trends: NpmTrendPoint[];
+  source: "npm";
 }
 
 export interface NpmsScoreApiResponse {
@@ -126,9 +146,11 @@ export interface NpmsScoreApiResponse {
   quality: number;
   popularity: number;
   maintenance: number;
+  source: "npms";
 }
 
 export interface StackExchangeQuestionsApiResponse {
   questions: StackExchangeQuestion[];
   summary: StackExchangeQuestionSummary;
+  source: "stackexchange";
 }

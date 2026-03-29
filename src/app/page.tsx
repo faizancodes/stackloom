@@ -43,10 +43,10 @@ export default function HomePage() {
               adoption, and support surface before committing to a dependency.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild>
+              <Button>
                 <Link href="/dashboard">Open dashboard</Link>
               </Button>
-              <Button asChild variant="secondary">
+              <Button variant="secondary">
                 <Link href="/search">Search packages</Link>
               </Button>
             </div>
@@ -66,7 +66,9 @@ export default function HomePage() {
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {highlights.map((item) => (
-            <Card key={item.title} title={item.title} description={item.description} />
+            <Card key={item.title} title={item.title} description={item.description}>
+              <div className="h-24 rounded-none border border-dashed border-[#222222] bg-[#0f0f0f]" />
+            </Card>
           ))}
         </div>
       </section>

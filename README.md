@@ -4,7 +4,7 @@
 
 ## Live Demo
 
-**[Live Demo](https://placeholder.projects.headstarter.co)**
+**[Live Demo](https://stackloom-cm52.projects.headstarter.co)**
 
 ## Project Description
 
